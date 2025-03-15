@@ -1,0 +1,16 @@
+#Baca CSV
+import pandas as pd
+order_df = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/order.csv")
+
+#Liat banyaknya baris kolom pada data (dataframe)
+print(order_df.shape)
+
+#Liat data sebanyak 10 baris
+print(order_df.head(10)) #dari atas
+print(order_df.tail(10)) #dari bawah
+
+# Quick summary  dari segi kuantitas, harga, freight value, dan weight
+print(order_df.describe()) #pake (include="all) atau (include="object") bisa
+
+# Median dari total pembelian konsumen per transaksi kolom price
+print(order_df.loc[:, "price"].median)
